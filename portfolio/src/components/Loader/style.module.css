@@ -1,0 +1,45 @@
+.loaderBody {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lato", sans-serif;
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.loader h1 {
+  color: #fff;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.spinner {
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid orange;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  animation: spin 0.4s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
