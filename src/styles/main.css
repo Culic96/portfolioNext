@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-#__next {
+body {
   font-family: "Lato", sans-serif;
   width: 100vw;
   height: 100vh;

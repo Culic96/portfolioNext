@@ -1,6 +1,5 @@
 .heading-container {
-  /* position: relative; */
-  height: 90vh;
+  height: 93vh;
   width: 70vw;
   margin-left: 15vw;
   margin-top: 2vh;
@@ -32,20 +31,19 @@
 }
 
 .heading h2 {
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 500;
   animation: fade-in 2s ease;
 }
 
 .heading-desc {
-  margin-top: 1.2rem;
+  margin-top: 1rem;
   text-align: center;
   text-transform: uppercase;
   animation: fade-in 2s ease;
 }
 
 .heading-desc h4 {
-  /* position: relative; */
   font-weight: 300;
   font-size: 1.6rem;
   animation: fade-in 2s ease;
@@ -65,7 +63,7 @@
 
 .tech-heading h2 {
   margin-top: 1.2rem;
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 500;
   text-transform: uppercase;
   animation: fade-in 2s ease;
@@ -121,7 +119,7 @@
 }
 
 .footer-heading h3 {
-  font-size: 2rem;
+  font-size: 1.7rem;
   text-transform: uppercase;
   font-weight: 500;
   animation: fade-in 2s ease;
