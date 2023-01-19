@@ -18,3 +18,9 @@ body {
   background-position: center center;
   position: relative;
 }
+
+@media (max-width: 420px){
+  body {
+    overflow-y: visible;
+  }
+}
