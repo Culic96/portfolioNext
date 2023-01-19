@@ -165,7 +165,7 @@
     flex-direction: column;
   }
   .heading h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .heading-desc h4 {
@@ -177,7 +177,7 @@
   }
 
   .tech-heading h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .tech-desc h3 {
@@ -187,6 +187,14 @@
   .tech-wrapper img {
     width: 30px;
     height: 30px;
+  }
+
+  .footer-social{
+    margin-top: 0.8rem;
+  }
+
+  .footer-social h4 {
+    font-size: 0.8rem;
   }
 
   .footer-heading h3 {
