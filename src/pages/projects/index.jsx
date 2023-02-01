@@ -41,7 +41,7 @@ const Projects = () => {
                   target="_blank"
                   className={styles["proj-link"]}
                 >
-                  Wiew Work
+                  View Work
                 </a>
               </div>
               <div className={styles["proj-two"]}>
@@ -61,7 +61,7 @@ const Projects = () => {
                   className={styles["proj-link"]}
                   target="_blank"
                 >
-                  Wiew Work
+                  View Work
                 </a>
               </div>
             </div>
