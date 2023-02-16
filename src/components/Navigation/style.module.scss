@@ -48,8 +48,8 @@
 
 .burger-item {
   display: block;
-  width: 4em;
-  height: 0.5em;
+  width: 40px;
+  height: 3px;
   background-color: #fff;
 }
 
@@ -65,7 +65,7 @@
 }
 
 .burger-item.clicked:nth-child(3) {
-  transform: rotate(135deg) translate(-0.2em, 1em);
+  transform: rotate(135deg) translate(0, 0.9em);
   transition: ease-out 0.5s;
 }
 

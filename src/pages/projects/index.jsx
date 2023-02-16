@@ -50,10 +50,9 @@ const Projects = () => {
                 </div>
                 <div className={styles["proj-one-desc"]}>
                   <h4>
-                    This is the first app I created,a simple roulette
-                    simulation. The player enter the amount of coins he wish to
-                    spend and can play game untill he losses them all. Don't
-                    gamble.
+                  This is the first app I created, a simple roulette simulation.
+                  The player enter the amount of coins he wishes to spend and can play the game until he loses them all.
+                  Don't gamble.
                   </h4>
                 </div>
                 <a
