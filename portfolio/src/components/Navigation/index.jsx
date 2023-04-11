@@ -47,7 +47,7 @@ const Navigation = () => {
         >
           <a href="/">About me</a>
           <a href="/projects">Projects</a>
-          <a href="/NikolaResume.pdf" download>
+          <a href="/NikolaCulic.pdf" download>
             Download CV
           </a>
         </div>
