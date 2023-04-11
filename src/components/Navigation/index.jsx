@@ -61,7 +61,7 @@ const Navigation = () => {
               <a href="/projects">Projects</a>
             </li>
             <li>
-              <a href="./NikolaResume.pdf" download={true}>
+              <a href="./NikolaCulic.pdf" download={true}>
                 Download CV
               </a>
             </li>
