@@ -40,12 +40,12 @@ const Navigation = () => {
           className={clsx(
             isOpen && [styles.visible, styles.menuList],
             // styles.active,
-            !isOpen && styles.unvisible, 
+            !isOpen && styles.unvisible
           )}
         >
           <a href="/">About me</a>
           <a href="/projects">Projects</a>
-          <a href="/NikolaResume.pdf" download>
+          <a href="/NikolaCulic.pdf" download>
             Download CV
           </a>
         </div>
@@ -60,10 +60,10 @@ const Navigation = () => {
               <a href="/projects">Projects</a>
             </li>
             <li>
-            <a href="./NikolaResume.pdf" download={true}>
-              Download CV
-            </a>
-          </li>
+              <a href="./NikolaCulic.pdf" download={true}>
+                Download CV
+              </a>
+            </li>
           </ul>
         </div>
         
