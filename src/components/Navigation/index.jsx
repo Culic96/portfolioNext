@@ -3,7 +3,6 @@ import { clsx } from "clsx";
 import { useState } from "react";
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  console.log(isOpen);
   return (
     <>
       <div className={styles["nav-holder-mobile"]}>
@@ -67,9 +66,7 @@ const Navigation = () => {
           </li>
           </ul>
         </div>
-        {/* <div className={styles.download}> */}
         
-        {/* </div> */}
       </div>
     </>
   );

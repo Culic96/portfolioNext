@@ -29,6 +29,7 @@
   gap: 0.5em;
   padding: 1rem;
   z-index: 999;
+  overflow: hidden;
 }
 
 .burger-item.unclicked {
@@ -48,24 +49,30 @@
 
 .burger-item {
   display: block;
-  width: 40px;
+  width: 50px;
   height: 3px;
   background-color: #fff;
+  transition: 'all 0.5s ease',
+}
+
+.burger-item:nth-child(2) {
+  transform: translateX(0px);
+  transition: ease-out 0.5s;
 }
 
 .burger-item.clicked:nth-child(1) {
-  transform: rotate(45deg) translate(0.3em, 1em);
+  transform: rotate(45deg) translate(24px, 4px);
   transition: ease-in 0.5s;
 }
 
 .burger-item.clicked:nth-child(2) {
-  transform: scale(0.1);
+  transform: translateX(100px);
   transition: ease-out 0.5s;
-  display: none;
+  opacity: 0;
 }
 
 .burger-item.clicked:nth-child(3) {
-  transform: rotate(135deg) translate(0, 0.9em);
+  transform: rotate(-45deg) translate(14px, 2px);
   transition: ease-out 0.5s;
 }
 
