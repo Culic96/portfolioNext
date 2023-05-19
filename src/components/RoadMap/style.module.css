@@ -1,0 +1,86 @@
+.roadmap-wrapper {
+  max-width: 1920px;
+  height: 100%;
+  background: linear-gradient(rgba(55, 55, 55, 0.1), rgba(55, 55, 55, 0.3));
+  border-bottom: 2px groove #fff;
+}
+
+.divider {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.roadmap-technologies {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.technology {
+  width: 200px;
+  height: 200px;
+  background-image: url('/html.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: contain;
+  animation: slide-left 0.3s ease;
+}
+
+.technology:nth-child(2) {
+  background-image: url('/css.png');
+}
+
+.technology:nth-child(3) {
+  background-image: url('/js.png');
+}
+
+.technology:nth-child(4) {
+  background-image: url('/react.png');
+}
+
+.technology:nth-child(5) {
+  background-image: url('/js.png');
+}
+
+.technology:nth-child(6) {
+  background-image: url('/firebase-logo.png');
+}
+
+
+
+.roadmap-desc-holder {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+}
+
+.roadmap-desc {
+  color: white;
+  width: 400px;
+  height: 200px;
+  animation: slide-left 0.3s ease;
+}
+
+.roadmap-desc p {
+  color: white;
+  font-size: 24px;
+  font-weight: 300;
+  font-family: "Lato", sans-serif;
+}
+
+@keyframes slide-left {
+  from {opacity: 0; transform: translateX(-200px);}
+  to{opacity: 1; transform: translateX(0px);}
+}
+

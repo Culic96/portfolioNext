@@ -9,13 +9,24 @@
 body {
   font-family: "Lato", sans-serif;
   width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/background.jpeg");
-  background-size: cover;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: white;
+  /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/heroBackground.jpg"); */
+  /* background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center center; */
+  margin: 0 auto;
+
+  position: relative;
+}
+
+.pageWrapper {
+  max-width: 1920px;
+  background-color: black;
+  height: 100%;
+  margin: 0 auto;
   position: relative;
 }
 

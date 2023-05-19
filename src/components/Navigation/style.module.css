@@ -1,0 +1,75 @@
+.nav-holder {
+  font-family: "lato", "sans-serif";
+  background: linear-gradient(rgba(55, 55, 55, 0.1), rgba(55, 55, 55, 0.3)), black;
+  color: white;
+  height: 10vh;
+  max-width: 1920px;
+  border-bottom: 1px groove white;
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 13px 12px -5px, rgba(255, 255, 255, 0.8) 0px 8px 12px -8px;
+}
+
+.logo-holder {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  background: url('/logo-small.jpg');
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-size:contain;
+  transition: all 0.3s ease;
+
+}
+
+.logo:hover {
+  transition: all 0.3s ease;
+  box-shadow: #e67e00 0px 2px 3px;
+  cursor: pointer;
+}
+
+.nav-links {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+  margin-right: 2rem;
+  animation: fade 1s ease;
+  transition: all 1s ease;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 2px groove transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  background-position: left bottom;
+  border-bottom: 2px groove #e67e00;
+  text-shadow: 0.5px 1px 1px #e67e00;
+  opacity: 0.75;
+  transition: all 0.3s ease;
+}
+
+@keyframes fade {
+  from {opacity: 0}
+  to {opacity: 1}
+}
