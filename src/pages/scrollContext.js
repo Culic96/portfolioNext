@@ -2,7 +2,7 @@ import React, { createContext, useState } from "react";
 
 export const ScrollContext = createContext();
 
-export const ScrollProvider = ({ children }) => {
+const  ScrollProvider = ({ children }) => {
   const [aboutRef, setAboutRef] = useState(null);
   const [roadmapRef, setRoadmapRef] = useState(null);
   return (
@@ -11,3 +11,5 @@ export const ScrollProvider = ({ children }) => {
     </ScrollContext.Provider>
   );
 };
+
+export default ScrollProvider;
