@@ -9,6 +9,7 @@ import styles from "./home.module.css";
 import { Hero } from "@/components/Hero";
 import { AboutMe } from "@/components/AboutMe";
 import Roadmap from "@/components/RoadMap";
+import { Projects } from "@/components/Projects";
 const Home = () => {
   const [loading, setIsLoading] = useState(true);
 
@@ -30,6 +31,7 @@ const Home = () => {
          <Hero/>
          <AboutMe/>
          <Roadmap/>
+         <Projects/>
          </ScrollProvider>
       </div>
 

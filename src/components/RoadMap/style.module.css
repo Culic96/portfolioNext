@@ -12,7 +12,7 @@
   align-items: center;
 }
 
-.roadmap-technologies {
+/* .roadmap-technologies {
   width: 50%;
   display: flex;
   justify-content: center;
@@ -22,16 +22,8 @@
   gap: 2rem;
 }
 
-.technology {
-  width: 200px;
-  height: 200px;
-  background-image: url('/html.png');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  background-size: contain;
-  animation: slide-left 0.3s ease;
-}
+
+
 
 .technology:nth-child(2) {
   background-image: url('/css.png');
@@ -52,6 +44,7 @@
 .technology:nth-child(6) {
   background-image: url('/firebase-logo.png');
 }
+
 
 
 
@@ -77,10 +70,84 @@
   font-size: 24px;
   font-weight: 300;
   font-family: "Lato", sans-serif;
-}
+} */
 
 @keyframes slide-left {
   from {opacity: 0; transform: translateX(-200px);}
   to{opacity: 1; transform: translateX(0px);}
 }
+
+.wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.steps {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.step {
+  display: flex;
+  width: 500px;
+  height: 300px;
+  position: relative;
+}
+
+
+
+/* .step::after {
+  content: "";
+  position: absolute;
+  left: 100px;
+  top: 200px;
+  height: 50px;
+  width: 4px;
+  z-index: 1;
+  background-color: #e67e00;
+} */
+
+.info {
+  margin: 8px 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: white;
+}
+
+.text {
+  font-size: 20px;
+  color: white;
+  font-weight: 300;
+}
+
+
+
+.number {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  border: 2px solid #e67e00;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 65%;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  margin-right: 12px;
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+
 
