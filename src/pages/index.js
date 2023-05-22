@@ -10,6 +10,7 @@ import { Hero } from "@/components/Hero";
 import { AboutMe } from "@/components/AboutMe";
 import Roadmap from "@/components/RoadMap";
 import { Projects } from "@/components/Projects";
+import Contact from "@/components/Contact";
 const Home = () => {
   const [loading, setIsLoading] = useState(true);
 
@@ -32,6 +33,7 @@ const Home = () => {
          <AboutMe/>
          <Roadmap/>
          <Projects/>
+         <Contact/>
          </ScrollProvider>
       </div>
 

@@ -47,7 +47,8 @@
 
 .project-desc-title {
     font-size: 32px;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    color: #e67e00;
 }
 
 .project-desc-text {
@@ -60,6 +61,7 @@
 .project-desc-tech {
     font-weight: bold;
     font-size: 24px;
+    color: #e67e00;
 }
 
 .project-desc-code {

@@ -10,7 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Lato", sans-serif;
+    font-family: "Nunito", sans-serif;
     border-bottom: 2px groove #fff;
 }
 
@@ -56,6 +56,8 @@
     text-decoration: none;
     color: '#fff';
     font-size: 44px;
+    transition: color 0.3s ease;
+
 }
 
 .hero-text a:visited {
@@ -63,6 +65,13 @@
     color: '#fff';
     font-size: 44px;
 }
+
+
+
+.icon{
+    color: #fff;
+}
+
 
 .hero-social {
     display: flex;

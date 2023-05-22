@@ -50,7 +50,6 @@ const Roadmap = () => {
 
   return (
     <>
-      {/* <div ref={roadmapRef} className={styles["roadmap-wrapper"]}> */}
       <h1
         ref={roadmapRef}
         style={{
@@ -75,13 +74,7 @@ const Roadmap = () => {
       >
         This is my journey in to the programing
       </p>
-      {/* <div className={styles['divider']}> */}
       <div className={styles["wrapper"]}>
-        {/* <div className={styles["technologies"]}>
-          {descriptions.map((desc) => (
-            <div key={desc.id} className={styles["technology"]} />
-          ))}
-        </div> */}
         <div className={styles["steps"]}>
           {descriptions.map((desc) => {
             if (desc.id % 2 === 0) {
@@ -114,8 +107,6 @@ const Roadmap = () => {
           })}
         </div>
       </div>
-      {/* </div> */}
-      {/* </div> */}
     </>
   );
 };

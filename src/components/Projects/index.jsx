@@ -1,31 +1,42 @@
 import style from "./style.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import {useRef, useContext, useEffect} from "react";
+import { ScrollContext } from "@/pages/scrollContext";
 export function Projects() {
+    const {setProjectsRef} = useContext(ScrollContext);
+    const projectRef = useRef(null)
   const projects = [
     {
       id: 1,
       title: "Roulette app",
+      url: 'https://github.com/Culic96/roulette-demo-js',
       tech: 'HTML CSS JS',
       desc: "This is the first app that i have made. After studying Javascript for three months I thought to test what I have learn which is represented in this project.It is a simple app made with HTML, CSS and JS. The user can enter the amounth of chips he wishes to spend then add chips to the table and choose his lucky numbers.",
     },
     {
       id: 2,
       title: "Todo app",
+      url: 'https://github.com/Culic96/todo-app',
       tech: 'NextJS Firebase Styled Components',
       desc: "My first ever project made with NextJS, Typescript and Firebase. In this project I have also used Styled Components. It is a simple CRUD app, where user can Login, create todo cards, edit his profile, search for specific card and so on. Note: This project is not entirely finished and there is a lot of space for expansion.",
     },
     {
       id: 3,
       title: "Quizz app",
+      url: 'https://github.com/Culic96/Quizz',
       tech: 'NextJS MUI',
       desc: "This is the app that uses trivia API. User enters his name, and then he can choose which topic suits him best. There are easy, normal, and hard questions. Currently we save data into the local storage, later I will add Node JS, also this project is not entirely finished, and have a lot of space for expansion.",
     },
   ];
 
+  useEffect(() => {
+    setProjectsRef(projectRef.current);
+  })
+
   return (
     <>
-      <div className={style["projects-wrapper"]}>
+      <div ref={projectRef} className={style["projects-wrapper"]}>
         <h1
           style={{
             color: "white",
@@ -64,8 +75,8 @@ export function Projects() {
                   </h6>
                   <h6 className={style["project-desc-code"]}>
                     Code
-                    <a href="https://github.com/Culic96/roulette-demo-js">
-                     
+                    <a target='_blank' href={project.url}>
+                    
                       <FontAwesomeIcon
                         style={{ fontSize: "32px", color: "white" }}
                         icon={faGithub}
@@ -88,7 +99,7 @@ export function Projects() {
                 </h6>
                 <h6 className={style["project-desc-code"]}>
                   Code
-                  <a href="https://github.com/Culic96/roulette-demo-js">
+                  <a target='_blank' href={project.url}>
                     <FontAwesomeIcon
                       style={{ fontSize: "32px", color: "white" }}
                       icon={faGithub}
