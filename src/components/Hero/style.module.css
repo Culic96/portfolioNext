@@ -94,7 +94,7 @@
     border-radius: 50%;
     background-size: cover;
     box-shadow: #e67e00 0px 5px 12px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('/me.jpeg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)), url('/me.jpeg');
 }
 
 @media (min-width: 1920px) {

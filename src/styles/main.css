@@ -11,7 +11,7 @@ body {
   width: 100vw;
   height: 100%;
   overflow-x: hidden;
-  background-color:#5f5e5e;
+  background:linear-gradient(rgba(33, 33, 33, 0.1), rgba(33, 33, 33, 0.3)), black;
   /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("/heroBackground.jpg"); */
   /* background-size: cover;

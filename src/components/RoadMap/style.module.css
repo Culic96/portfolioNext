@@ -159,5 +159,29 @@
   background-size: 80%;
 }
 
+@media  (min-width: 1920px){
+
+    .step{
+      width: 850px;
+      height: auto;
+      margin-bottom: 40px;
+    }
+    .number {
+      height: 400px;
+      width: 400px;
+    }
+
+    .info{
+      height: 400px;
+    }
+
+    .title{
+      font-size: 40px;
+    }
+
+    .text{
+      font-size: 28px;
+    }
+}
 
 

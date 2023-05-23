@@ -3,28 +3,27 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { useRef, useContext, useEffect, useState } from "react";
 import { ScrollContext } from "@/pages/scrollContext";
-import projects from "../../data/projects";
 
 export function Projects({ project, reverseLayout }) {
-  const { setProjectsRef } = useContext(ScrollContext);
-  const projectRef = useRef(null);
   const [currentPicturePointer, setCurrentPicturePointer] = useState(0);
-  const [animate, setAnimate] = useState(false); 
+  const [animate, setAnimate] = useState(false);
 
   const getNextPicture = () => {
     setAnimate(true);
     setTimeout(() => {
-      setCurrentPicturePointer((prevPointer) =>
-        (prevPointer + 1) % project.images.length
-      );
       setAnimate(false);
-    }, 300);
+      setCurrentPicturePointer(
+        (prevPointer) => (prevPointer + 1) % project.images.length
+      );
+    }, 280);
+   
   };
 
   const getPreviousPicture = () => {
     setAnimate(true);
-  
+
     setTimeout(() => {
+      setAnimate(false);
       setCurrentPicturePointer((prevPointer) => {
         const newPointer = prevPointer - 1;
         if (newPointer < 0) {
@@ -33,19 +32,15 @@ export function Projects({ project, reverseLayout }) {
           return newPointer;
         }
       });
-      setAnimate(false);
-    }, 300);
+    }, 280);
   };
 
-  useEffect(() => {
-    setProjectsRef(projectRef.current);
-  }, [setProjectsRef]);
-
   return (
-    <div className={style['project-wrapper']}>
+    <div className={style["project-wrapper"]}>
       <div
-        ref={projectRef}
-        className={`${style["project"]} ${reverseLayout ? style["project-reverse"] : ""}`}
+        className={`${style["project"]} ${
+          reverseLayout ? style["project-reverse"] : ""
+        }`}
       >
         {reverseLayout && (
           <>
@@ -55,11 +50,7 @@ export function Projects({ project, reverseLayout }) {
               <h6 className={style["project-desc-tech"]}>{project.tech}</h6>
               <h6 className={style["project-desc-code"]}>
                 Code
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={project.url}
-                >
+                <a target="_blank" rel="noopener noreferrer" href={project.url}>
                   <FontAwesomeIcon
                     style={{ fontSize: "32px", color: "white" }}
                     icon={faGithub}
@@ -67,7 +58,7 @@ export function Projects({ project, reverseLayout }) {
                 </a>
               </h6>
             </div>
-            <div className={style["project-background-holder"]} >
+            <div className={style["project-background-holder"]}>
               <div className={style["project-background"]}>
                 <img
                   className={animate ? style["animateRight"] : ""}
@@ -76,8 +67,18 @@ export function Projects({ project, reverseLayout }) {
                 />
               </div>
               <div className={style["project-buttons"]}>
-                <button className={style['primary-button']} onClick={getPreviousPicture}>Prev Picture</button>
-                <button className={style['primary-button']} onClick={getNextPicture}>Next Picture</button>
+                <button
+                  className={style["primary-button"]}
+                  onClick={getPreviousPicture}
+                >
+                  Prev Picture
+                </button>
+                <button
+                  className={style["primary-button"]}
+                  onClick={getNextPicture}
+                >
+                  Next Picture
+                </button>
               </div>
             </div>
           </>
@@ -85,7 +86,7 @@ export function Projects({ project, reverseLayout }) {
 
         {!reverseLayout && (
           <>
-            <div className={style["project-background-holder"]} >
+            <div className={style["project-background-holder"]}>
               <div className={style["project-background"]}>
                 <img
                   className={animate ? style["animateLeft"] : ""}
@@ -94,8 +95,18 @@ export function Projects({ project, reverseLayout }) {
                 />
               </div>
               <div className={style["project-buttons"]}>
-                <button className={style['primary-button']} onClick={getPreviousPicture}>Prev Picture</button>
-                <button className={style['primary-button']} onClick={getNextPicture}>Next Picture</button>
+                <button
+                  className={style["primary-button"]}
+                  onClick={getPreviousPicture}
+                >
+                  Prev Picture
+                </button>
+                <button
+                  className={style["primary-button"]}
+                  onClick={getNextPicture}
+                >
+                  Next Picture
+                </button>
               </div>
             </div>
             <div className={style["project-desc"]}>
@@ -104,11 +115,7 @@ export function Projects({ project, reverseLayout }) {
               <h6 className={style["project-desc-tech"]}>{project.tech}</h6>
               <h6 className={style["project-desc-code"]}>
                 Code
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={project.url}
-                >
+                <a target="_blank" rel="noopener noreferrer" href={project.url}>
                   <FontAwesomeIcon
                     style={{ fontSize: "32px", color: "white" }}
                     icon={faGithub}
@@ -123,44 +130,47 @@ export function Projects({ project, reverseLayout }) {
   );
 }
 
-
 export default function ProjectList({ projects }) {
+  const { setProjectsRef } = useContext(ScrollContext);
+  const projectRef = useRef(null);
+
+  useEffect(() => {
+    setProjectsRef(projectRef.current);
+  }, [setProjectsRef]);
   return (
     <>
-    <div  className={style["projects-wrapper"]}>
-
-      <h1
-        style={{
-          color: "white",
-          textAlign: "left",
-          paddingTop: "40px",
-          paddingLeft: "200px",
-          fontSize: "50px",
-        }}
-      >
-        Projects
-      </h1>
-      <p
-        style={{
-          color: "white",
-          textAlign: "left",
-          margin: "40px auto",
-          fontSize: "24px",
-          fontWeight: "300",
-          marginLeft: "200px",
-        }}
-      >
-        Here are some pieces of my web art
-      </p>
-      {projects.map((project, index) => (
-        <Projects
-          key={project.id}
-          project={project}
-          reverseLayout={index % 2 === 1}
-        />
-      ))}
-    </div>
-
+      <div ref={projectRef} className={style["projects-wrapper"]}>
+        <h1
+          style={{
+            color: "white",
+            textAlign: "left",
+            paddingTop: "40px",
+            paddingLeft: "200px",
+            fontSize: "50px",
+          }}
+        >
+          Projects
+        </h1>
+        <p
+          style={{
+            color: "white",
+            textAlign: "left",
+            margin: "40px auto",
+            fontSize: "24px",
+            fontWeight: "300",
+            marginLeft: "200px",
+          }}
+        >
+          Here are some pieces of my web art
+        </p>
+        {projects.map((project, index) => (
+          <Projects
+            key={project.id}
+            project={project}
+            reverseLayout={index % 2 === 1}
+          />
+        ))}
+      </div>
     </>
   );
 }
