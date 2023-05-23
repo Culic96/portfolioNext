@@ -97,5 +97,24 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('/me.jpeg');
 }
 
+@media (min-width: 1920px) {
+    .content-wrapper{
+        width: 1600px;
+    }
+
+    .hero-image{
+        height: 500px;
+        width: 500px;
+    }
+
+    .hero-text h1 {
+        font-size: 50px;
+    }
+
+    .hero-text h3 {
+        font-size: 40px;
+    }
+}
+
 
 

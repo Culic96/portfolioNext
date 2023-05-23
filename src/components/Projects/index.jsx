@@ -1,118 +1,166 @@
 import style from "./style.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import {useRef, useContext, useEffect} from "react";
+import { useRef, useContext, useEffect, useState } from "react";
 import { ScrollContext } from "@/pages/scrollContext";
-export function Projects() {
-    const {setProjectsRef} = useContext(ScrollContext);
-    const projectRef = useRef(null)
-  const projects = [
-    {
-      id: 1,
-      title: "Roulette app",
-      url: 'https://github.com/Culic96/roulette-demo-js',
-      tech: 'HTML CSS JS',
-      desc: "This is the first app that i have made. After studying Javascript for three months I thought to test what I have learn which is represented in this project.It is a simple app made with HTML, CSS and JS. The user can enter the amounth of chips he wishes to spend then add chips to the table and choose his lucky numbers.",
-    },
-    {
-      id: 2,
-      title: "Todo app",
-      url: 'https://github.com/Culic96/todo-app',
-      tech: 'NextJS Firebase Styled Components',
-      desc: "My first ever project made with NextJS, Typescript and Firebase. In this project I have also used Styled Components. It is a simple CRUD app, where user can Login, create todo cards, edit his profile, search for specific card and so on. Note: This project is not entirely finished and there is a lot of space for expansion.",
-    },
-    {
-      id: 3,
-      title: "Quizz app",
-      url: 'https://github.com/Culic96/Quizz',
-      tech: 'NextJS MUI',
-      desc: "This is the app that uses trivia API. User enters his name, and then he can choose which topic suits him best. There are easy, normal, and hard questions. Currently we save data into the local storage, later I will add Node JS, also this project is not entirely finished, and have a lot of space for expansion.",
-    },
-  ];
+import projects from "../../data/projects";
+
+export function Projects({ project, reverseLayout }) {
+  const { setProjectsRef } = useContext(ScrollContext);
+  const projectRef = useRef(null);
+  const [currentPicturePointer, setCurrentPicturePointer] = useState(0);
+  const [animate, setAnimate] = useState(false); 
+
+  const getNextPicture = () => {
+    setAnimate(true);
+    setTimeout(() => {
+      setCurrentPicturePointer((prevPointer) =>
+        (prevPointer + 1) % project.images.length
+      );
+      setAnimate(false);
+    }, 300);
+  };
+
+  const getPreviousPicture = () => {
+    setAnimate(true);
+  
+    setTimeout(() => {
+      setCurrentPicturePointer((prevPointer) => {
+        const newPointer = prevPointer - 1;
+        if (newPointer < 0) {
+          return project.images.length - 1;
+        } else {
+          return newPointer;
+        }
+      });
+      setAnimate(false);
+    }, 300);
+  };
 
   useEffect(() => {
     setProjectsRef(projectRef.current);
-  })
+  }, [setProjectsRef]);
 
   return (
-    <>
-      <div ref={projectRef} className={style["projects-wrapper"]}>
-        <h1
-          style={{
-            color: "white",
-            textAlign: "left",
-            paddingTop: "40px",
-            paddingLeft: "200px",
-            fontSize: "50px",
-          }}
-        >
-          Projects
-        </h1>
-        <p
-          style={{
-            color: "white",
-            textAlign: "left",
-            margin: "40px auto",
-            fontSize: "24px",
-            fontWeight: "300",
-            marginLeft: "200px",
-          }}
-        >
-          Here are some pieces off my web art
-        </p>
-        {projects.map((project) => {
-          if (project.id % 2 !== 0) {
-            return (
-              <div className={style["project"]}>
-                <div className={style["project-background"]}></div>
-                <div className={style["project-desc"]}>
-                  <h2 className={style["project-desc-title"]}>{project.title}</h2>
-                  <p className={style["project-desc-text"]}>
-                   {project.desc}
-                  </p>
-                  <h6 className={style["project-desc-tech"]}>
-                    {project.tech}
-                  </h6>
-                  <h6 className={style["project-desc-code"]}>
-                    Code
-                    <a target='_blank' href={project.url}>
-                    
-                      <FontAwesomeIcon
-                        style={{ fontSize: "32px", color: "white" }}
-                        icon={faGithub}
-                      />
-                    </a>
-                  </h6>
-                </div>
-              </div>
-            );
-          } else {
-            return (
-            <div className={style["project"]}>
-              <div className={style["project-desc"]}>
-                <h2 className={style["project-desc-title"]}>{project.title}</h2>
-                <p className={style["project-desc-text"]}>
-                {project.desc}
-                </p>
-                <h6 className={style["project-desc-tech"]}>
-                  {project.tech}
-                </h6>
-                <h6 className={style["project-desc-code"]}>
-                  Code
-                  <a target='_blank' href={project.url}>
-                    <FontAwesomeIcon
-                      style={{ fontSize: "32px", color: "white" }}
-                      icon={faGithub}
-                    />
-                  </a>
-                </h6>
-              </div>
-              <div className={style["project-background"]}></div>
+    <div className={style['project-wrapper']}>
+      <div
+        ref={projectRef}
+        className={`${style["project"]} ${reverseLayout ? style["project-reverse"] : ""}`}
+      >
+        {reverseLayout && (
+          <>
+            <div className={style["project-desc"]}>
+              <h2 className={style["project-desc-title"]}>{project.title}</h2>
+              <p className={style["project-desc-text"]}>{project.desc}</p>
+              <h6 className={style["project-desc-tech"]}>{project.tech}</h6>
+              <h6 className={style["project-desc-code"]}>
+                Code
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={project.url}
+                >
+                  <FontAwesomeIcon
+                    style={{ fontSize: "32px", color: "white" }}
+                    icon={faGithub}
+                  />
+                </a>
+              </h6>
             </div>
-            )
-          }
-        })}
+            <div className={style["project-background-holder"]} >
+              <div className={style["project-background"]}>
+                <img
+                  className={animate ? style["animateRight"] : ""}
+                  src={project.images[currentPicturePointer].url}
+                  alt="Project Image"
+                />
+              </div>
+              <div className={style["project-buttons"]}>
+                <button className={style['primary-button']} onClick={getPreviousPicture}>Prev Picture</button>
+                <button className={style['primary-button']} onClick={getNextPicture}>Next Picture</button>
+              </div>
+            </div>
+          </>
+        )}
+
+        {!reverseLayout && (
+          <>
+            <div className={style["project-background-holder"]} >
+              <div className={style["project-background"]}>
+                <img
+                  className={animate ? style["animateLeft"] : ""}
+                  src={project.images[currentPicturePointer].url}
+                  alt="Project Image"
+                />
+              </div>
+              <div className={style["project-buttons"]}>
+                <button className={style['primary-button']} onClick={getPreviousPicture}>Prev Picture</button>
+                <button className={style['primary-button']} onClick={getNextPicture}>Next Picture</button>
+              </div>
+            </div>
+            <div className={style["project-desc"]}>
+              <h2 className={style["project-desc-title"]}>{project.title}</h2>
+              <p className={style["project-desc-text"]}>{project.desc}</p>
+              <h6 className={style["project-desc-tech"]}>{project.tech}</h6>
+              <h6 className={style["project-desc-code"]}>
+                Code
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={project.url}
+                >
+                  <FontAwesomeIcon
+                    style={{ fontSize: "32px", color: "white" }}
+                    icon={faGithub}
+                  />
+                </a>
+              </h6>
+            </div>
+          </>
+        )}
       </div>
+    </div>
+  );
+}
+
+
+export default function ProjectList({ projects }) {
+  return (
+    <>
+    <div  className={style["projects-wrapper"]}>
+
+      <h1
+        style={{
+          color: "white",
+          textAlign: "left",
+          paddingTop: "40px",
+          paddingLeft: "200px",
+          fontSize: "50px",
+        }}
+      >
+        Projects
+      </h1>
+      <p
+        style={{
+          color: "white",
+          textAlign: "left",
+          margin: "40px auto",
+          fontSize: "24px",
+          fontWeight: "300",
+          marginLeft: "200px",
+        }}
+      >
+        Here are some pieces of my web art
+      </p>
+      {projects.map((project, index) => (
+        <Projects
+          key={project.id}
+          project={project}
+          reverseLayout={index % 2 === 1}
+        />
+      ))}
+    </div>
+
     </>
   );
 }

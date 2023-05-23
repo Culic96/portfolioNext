@@ -1,15 +1,13 @@
 import Navigation from "@/components/Navigation";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { useState, useEffect } from "react";
 import Loader from "@/components/Loader";
 import  ScrollProvider  from "./scrollContext";
-
+import projects from "../data/projects";
 import styles from "./home.module.css";
 import { Hero } from "@/components/Hero";
 import { AboutMe } from "@/components/AboutMe";
 import Roadmap from "@/components/RoadMap";
-import { Projects } from "@/components/Projects";
+import ProjectList from "@/components/Projects";
 import Contact from "@/components/Contact";
 const Home = () => {
   const [loading, setIsLoading] = useState(true);
@@ -32,7 +30,7 @@ const Home = () => {
          <Hero/>
          <AboutMe/>
          <Roadmap/>
-         <Projects/>
+         <ProjectList projects={projects}/>
          <Contact/>
          </ScrollProvider>
       </div>

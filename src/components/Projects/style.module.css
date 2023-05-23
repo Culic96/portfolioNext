@@ -11,38 +11,102 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 3rem;
 }
 
 .project {
-    width: 800px;
-    margin: 0 auto;
+    max-width: 1920px;
     height: 500px;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     padding-bottom: 20px;
-}
-
-.project-background {
-    width: 50%;
+  }
+  
+.project-background-holder {
+    display: flex;
+   
+    flex-direction: column;
     height: 100%;
-    background-image: url('/css.png');
-    background-size: cover;
+  }
+
+@keyframes fadeLeft {
+    from {opacity: 0; transform: translateX(-100%);}
+    to {opacity: 1; transform: translateX(0);}
+  }
+
+  @keyframes fadeRight {
+    from {opacity: 0; transform: translateX(100%);}
+        to {opacity: 1; transform: translateX(0);}
+  }
+
+.project-background{
+    height: 400px;
+    width: 100%;
+  }
+  
+.project-background img{
+    width: auto;
+    height: 329px;
+    display: block;
     background-position: center center;
     background-repeat: no-repeat;
+    background-size: cover;
+    
 }
 
-.project-desc {
-    width: 50%;
-    height: 100%;
+
+
+.animateLeft {
+    animation: fadeLeft 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+
+.animateRight {
+    animation: fadeRight 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.project-buttons{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+  
+.primary-button {
+    font-family: inherit;
+    border: 2px groove #fff;
+    padding: 8px;
+    font-size: 20px;
+    color: #fff;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.primary-button:hover {
+    border: 2px groove #e67e00;
+    color: #e67e00;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+
+.project-desc {
+    width: 40%;
+    display: flex;
+    height: 500px;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     text-align: center;
     gap: 15px;
     color: #fff;
+    margin-bottom: 30px;
 }
 
 .project-desc-title {
@@ -66,6 +130,63 @@
 
 .project-desc-code {
     font-size: 24px;
+}
+
+@media (max-width: 1024px) {
+    .project-background{
+        height: 300px;
+    }
+
+    .project-background img{
+      height: 250px;
+    }
+
+    .project-desc-title{
+        font-size: 28px;
+    }
+
+    .project-desc-text{
+        font-size: 20px;
+    }
+
+    .project-desc-tech{
+        font-size: 18px;
+    }
+
+
+}
+
+@media (min-width: 1440px) {
+    .project-background img{
+      height: 329px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .project-background img{
+      height: 400px;
+    }
+
+
+    .project-desc-title{
+        font-size: 40px;
+    }
+
+    .project-desc-text{
+        font-size: 30px;
+    }
+
+    .project-desc-tech{
+        font-size: 40px;
+    }
+
+    .project-buttons{
+        padding-top: 20px;
+    }
+
+    .project-desc-code {
+        font-size: 33px;
+    }
 }
 
 
