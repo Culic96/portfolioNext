@@ -97,6 +97,50 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)), url('/me.jpeg');
 }
 
+@media screen and (min-width: 380px) and (max-width: 767px) {
+    .hero-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero-text {
+        gap: 5px;
+    }
+    .hero-text h1 {
+        font-size: 22px;
+    }
+
+    .hero-text h3 {
+        font-size: 16px;
+    }
+
+    .icon {
+        font-size: 26px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .hero-image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .hero-text {
+        gap: 0.5rem;
+    }
+
+    .hero-text h1 {
+        font-size: 28px;
+    }
+
+    .hero-text h3 {
+        font-size: 18px;
+    }
+
+    .icon {
+        font-size: 32px;
+    }
+}
 @media (min-width: 1920px) {
     .content-wrapper{
         width: 1600px;

@@ -50,28 +50,10 @@ const Roadmap = () => {
 
   return (
     <>
-      <h1
-        ref={roadmapRef}
-        style={{
-          color: "white",
-          textAlign: "left",
-          paddingTop: "40px",
-          paddingLeft: "200px",
-          fontSize: "50px",
-        }}
-      >
+      <h1 ref={roadmapRef} className={styles["roadmap-heading"]}>
         Road map
       </h1>
-      <p
-        style={{
-          color: "white",
-          textAlign: "left",
-          margin: "40px auto",
-          fontSize: "24px",
-          fontWeight: "300",
-          marginLeft: "200px",
-        }}
-      >
+      <p className={styles["roadmap-subheading"]}>
         This is my journey in to the programing
       </p>
       <div className={styles["wrapper"]}>

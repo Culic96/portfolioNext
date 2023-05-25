@@ -20,7 +20,7 @@ useEffect(() => {
     return <>
     <div className={styles['about-wrapper']}>
         <div ref={aboutRef} className={styles['about-content-wrapper']}>
-            {innerHeight > 210 &&
+            {innerHeight > 180 &&
                 <div className={styles['about-text']}>
                 <h1 className={styles['about-heading']}>So, who am I?</h1>
                 <h3>Something about me</h3>
