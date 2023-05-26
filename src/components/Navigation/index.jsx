@@ -1,20 +1,20 @@
 import styles from "./style.module.css";
 import { clsx } from "clsx";
-import { useState } from "react";
 import { useContext } from "react";
 import { ScrollContext } from "../../pages/scrollContext";
-const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const Navigation = ({ isOpen, toggleOpen }) => {
   const { heroRef, aboutRef, roadmapRef, projectsRef, contactRef } =
     useContext(ScrollContext);
   const handleClickScroll = (ref) => {
+    toggleOpen();
     ref.scrollIntoView({ behavior: "smooth" });
+ 
   };
   return (
     <>
       <div className={styles["nav-holder-mobile"]}>
         <div
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => toggleOpen()}
           className={clsx(
             styles.burger,
             isOpen && styles.clicked,
@@ -52,7 +52,6 @@ const Navigation = () => {
           <a
             onClick={() => {
               handleClickScroll(heroRef);
-              setIsOpen(false);
             }}
           >
             Info
@@ -61,7 +60,6 @@ const Navigation = () => {
           <a
             onClick={() => {
               handleClickScroll(aboutRef);
-              setIsOpen(false);
             }}
           >
             About me
@@ -69,7 +67,6 @@ const Navigation = () => {
           <a
             onClick={() => {
               handleClickScroll(roadmapRef);
-              setIsOpen(false);
             }}
           >
             Roadmap
@@ -77,7 +74,6 @@ const Navigation = () => {
           <a
             onClick={() => {
               handleClickScroll(projectsRef);
-              setIsOpen(false);
             }}
           >
             Projects
@@ -85,12 +81,11 @@ const Navigation = () => {
           <a
             onClick={() => {
               handleClickScroll(contactRef);
-              setIsOpen(false);
             }}
           >
             Contact
           </a>
-          <a onClick={() => setIsOpen(false)} href="/NikolaCulic.pdf" download>
+          <a onClick={() => toggleOpen()} href="/NikolaCulic.pdf" download>
             Download CV
           </a>
         </div>

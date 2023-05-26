@@ -262,9 +262,38 @@
 
 .project-desc-code {
     font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@media screen and (min-width: 360px) and (max-width: 766px) {
+.project-desc-code a {
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.project-desc-code a:active:hover {
+  text-decoration: none;
+  color: #e67e00;
+  transition: all 0.3s ease;
+}
+
+.icon{
+  font-size: 32px;
+  padding: 15px;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: #e67e00;
+  transition: color 0.3s ease;
+
+}
+
+
+@media screen and (min-width: 340px) and (max-width: 766px) {
   .project-heading{
     padding-left: 20px;
     font-size: 28px;
@@ -278,6 +307,7 @@
 
   .project{
     flex-direction: column;
+    margin-bottom: 25px;
   }
 
   .project-background{
@@ -291,6 +321,18 @@
   .project-desc{
     width: 80%;
   }
+
+  .project-desc-title{
+    font-size: 24px;
+  }
+
+  .project-desc-text{
+    font-size: 18px;
+  }
+
+  .project-desc-tech{
+    font-size: 22px;
+  }
 }
 
 @media screen and (min-width: 767px) and (max-width:768px){
@@ -298,6 +340,8 @@
     padding-left: 50px;
     font-size: 32px;
   }
+
+ 
 
   .project-subheading{
     font-size: 28px;
@@ -338,7 +382,7 @@
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .project {
-    padding-bottom: 1.2rem;
+    padding-bottom: 45px;
   }
 
   .project-background {

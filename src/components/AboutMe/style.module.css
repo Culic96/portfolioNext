@@ -59,7 +59,7 @@
     to {opacity: 1}
 }
 
-@media screen and (min-width: 380px) and (max-width: 767px) {
+@media screen and (min-width: 340px) and (max-width: 767px) {
     .about-text{
         justify-content: center;
         align-items: center;

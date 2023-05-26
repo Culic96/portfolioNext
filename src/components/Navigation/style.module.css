@@ -12,7 +12,7 @@
   left: 0;
   z-index: 999;
   margin: 0 auto;
-  box-shadow: rgba(255, 255, 255, 0.2) 0px 13px 12px -5px, rgba(255, 255, 255, 0.8) 0px 8px 12px -8px;
+  box-shadow: 0 4px 2px -2px gray;
 }
 
 
@@ -80,7 +80,7 @@
 
 
 
-@media screen and (min-width: 360px) and (max-width: 768px) {
+@media screen and (min-width: 340px) and (max-width: 1024px) {
   .nav-holder-mobile {
     font-family: "Nunito", "sans-serif";
     background: linear-gradient(rgba(55, 55, 55, 0.1), rgba(55, 55, 55, 0.3)), black;
@@ -136,7 +136,7 @@
   }
   
   .burger-item.clicked:nth-child(1) {
-    transform: rotate(45deg) translate(24px, 4px);
+    transform: rotate(45deg) translate(0.3em, 0.8em);
     transition: ease-in 0.5s;
   }
   
@@ -147,7 +147,7 @@
   }
   
   .burger-item.clicked:nth-child(3) {
-    transform: rotate(-45deg) translate(14px, 2px);
+    transform: rotate(-45deg) translate(0.3em, -0.8em);
     transition: ease-out 0.5s;
   }
   
@@ -156,16 +156,16 @@
     height: 100vh;
     position: absolute;
     display: flex;
-    padding-top: 8rem;
-    gap: 2rem;
+    padding-top: 5rem;
+    gap: 15px;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     top: 0;
+    overflow: hidden;
     right: 0;
     z-index: 1;
-    overflow: hidden;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     transition: all 0.5s ease;
   }
   
@@ -205,7 +205,7 @@
 }
 
 
-@media screen and (min-width: 769px) and (max-width:1024px){
+@media screen and (min-width: 1025px) and (max-width:1440px){
   .burger{
     display: none;
   }
@@ -218,7 +218,7 @@
   .nav-holder-mobile{display: none;}
 }
 
-@media screen and (min-width:1023px) and (max-width:2600px){
+@media screen and (min-width:1441px) and (max-width:2600px){
   .burger{
     display: none;
   }

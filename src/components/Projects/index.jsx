@@ -91,13 +91,9 @@ export function Projects({ project, reverseLayout }) {
           <h6 className={style["project-desc-tech"]}>{project.tech}</h6>
           <h6 className={style["project-desc-code"]}>
             Code
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href={project.url}
-            >
+            <a target="_blank" rel="noopener noreferrer" href={project.url}>
               <FontAwesomeIcon
-                style={{ fontSize: "32px", color: "white" }}
+                className={style['icon']}
                 icon={faGithub}
               />
             </a>

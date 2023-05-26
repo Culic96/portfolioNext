@@ -8,7 +8,7 @@ const {setHeroRef} = useContext(ScrollContext);
 const heroRef = useRef(null);
 useEffect(() => {
     setHeroRef(heroRef.current)
-})
+},[setHeroRef])
     return (
         <>
         <div ref={heroRef} className={styles['hero-wrapper']}>
