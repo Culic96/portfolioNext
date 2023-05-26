@@ -5,6 +5,7 @@
     background: linear-gradient(rgba(63, 55, 55, 0.1), rgba(63, 55, 55, 0.1)),black;
     text-align: center;
     border-bottom: 2px groove #fff;
+    user-select: none;
 }
 
 

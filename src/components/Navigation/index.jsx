@@ -1,15 +1,33 @@
 import styles from "./style.module.css";
 import { clsx } from "clsx";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ScrollContext } from "../../pages/scrollContext";
 const Navigation = ({ isOpen, toggleOpen }) => {
   const { heroRef, aboutRef, roadmapRef, projectsRef, contactRef } =
     useContext(ScrollContext);
+    const [fontSize, setFontSize] = useState('18px');
+
   const handleClickScroll = (ref) => {
     toggleOpen();
     ref.scrollIntoView({ behavior: "smooth" });
  
   };
+
+  useEffect(() => {
+    const updateFontSize = () => {
+      const newFontSize = window.innerHeight > 400 ? '24px' : '18px';
+      setFontSize(newFontSize);
+    };
+
+    updateFontSize();
+
+    window.addEventListener('resize', updateFontSize);
+
+    return () => {
+      window.removeEventListener('resize', updateFontSize);
+    };
+  }, []);
+
   return (
     <>
       <div className={styles["nav-holder-mobile"]}>
@@ -44,6 +62,7 @@ const Navigation = ({ isOpen, toggleOpen }) => {
           ></div>
         </div>
         <div
+        style={{fontSize}}
           className={clsx(
             isOpen && [styles.visible, styles.menuList],
             !isOpen && styles.unvisible

@@ -14,6 +14,8 @@
   padding-top: 40px;
   padding-left: 200px;
   font-size: 50px;
+  user-select: none;
+
 }
 
 .roadmap-subheading {
@@ -23,6 +25,8 @@
   font-size: 24px;
   font-weight: 300;
   margin-left: 200px;
+  user-select: none;
+
 }
 
 /* .divider {
@@ -111,6 +115,8 @@
   align-items: center;
   border-bottom: 2px groove #fff;
   font-family: "Nunito", sans-serif;
+  user-select: none;
+
 }
 
 .steps {

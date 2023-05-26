@@ -12,6 +12,7 @@
     align-items: center;
     font-family: "Nunito", sans-serif;
     border-bottom: 2px groove #fff;
+    user-select: none;
 }
 
 .content-wrapper{

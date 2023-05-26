@@ -8,6 +8,8 @@
     align-items: center;
     font-size: 24px;
     font-family: 'Nunito', sans-serif;
+  user-select: none;
+
 }
 
 
