@@ -1,0 +1,246 @@
+.nav-holder {
+  font-family: "Nunito", "sans-serif";
+  background: linear-gradient(rgba(55, 55, 55, 0.1), rgba(55, 55, 55, 0.3)), black;
+  color: white;
+  height: 10vh;
+  max-width: 1920px;
+  border-bottom: 1px groove white;
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  margin: 0 auto;
+  box-shadow: 0 4px 2px -2px gray;
+  user-select: none;
+}
+
+
+
+.logo-holder {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  background: url('/logo-small.jpg');
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-size:contain;
+  transition: all 0.3s ease;
+
+}
+
+.logo:hover {
+  transition: all 0.3s ease;
+  box-shadow: #e67e00 0px 2px 3px;
+  cursor: pointer;
+}
+
+.nav-links {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+  margin-right: 2rem;
+  animation: fade 1s ease;
+  transition: all 1s ease;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 2px groove transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  background-position: left bottom;
+  border-bottom: 2px groove #e67e00;
+  text-shadow: 0.5px 1px 1px #e67e00;
+  opacity: 0.75;
+  transition: all 0.3s ease;
+}
+
+@keyframes fade {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+
+
+
+@media screen and (min-width: 340px) and (max-width: 1024px) {
+  .nav-holder-mobile {
+    font-family: "Nunito", "sans-serif";
+    background: linear-gradient(rgba(55, 55, 55, 0.1), rgba(55, 55, 55, 0.3)), black;
+    height: 10vh;
+    width: 100vw;
+    color: white;
+    border-bottom: 1px groove white;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    user-select: none;
+  }
+  
+  .burger {
+    height: 60px;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0.5em;
+    margin-right: 20px;
+    padding: 1rem;
+    z-index: 999;
+    overflow: hidden;
+  }
+  
+  .burger-item {
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #fff;
+    transition: 'all 0.5s ease',
+  }
+  
+  .burger-item.unclicked {
+    transform: rotate(0) translate(0);
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+  }
+  
+  .visible {
+    display: block;
+    opacity: 1;
+  }
+  
+  .unvisible {
+    display: none;
+    opacity: 0;
+  }
+  
+  .burger-item.clicked:nth-child(1) {
+    transform: rotate(45deg) translate(0.3em, 0.8em);
+    transition: ease-in 0.5s;
+  }
+  
+  .burger-item.clicked:nth-child(2) {
+    transform: translateX(100px);
+    transition: ease-out 0.5s;
+    opacity: 0;
+  }
+  
+  .burger-item.clicked:nth-child(3) {
+    transform: rotate(-45deg) translate(0.3em, -0.8em);
+    transition: ease-out 0.5s;
+  }
+  
+  .menuList {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    padding-top: 5rem;
+    gap: 15px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    top: 0;
+    overflow: hidden;
+    right: 0;
+    z-index: 1;
+    background-color: rgb(0, 0, 0);
+    transition: all 0.5s ease;
+  }
+  
+  .menuList a {
+    font-family: inherit, 'open-sans';
+    text-decoration: none;
+    /* font-size: 1.5rem; */
+    color: #fff;
+    border-bottom: 2px solid transparent;
+    padding: 0.3rem 1rem;
+    font-weight: 200;
+    transition: all 0.5s ease;
+    cursor: pointer;
+  }
+  
+  .menuList a:hover:active {
+    border-bottom: 2px solid orange;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  }
+  
+  .burger-item:nth-child(2) {
+    transform: translateX(0px);
+    transition: ease-out 0.5s;
+  }
+
+  .logo{
+    display: none;
+  }
+
+  .nav-holder{
+    display: none;
+  }
+
+  .logo-holder{
+    display: none;
+  }
+}
+
+
+@media screen and (min-width: 1025px) and (max-width:1440px){
+  .burger{
+    display: none;
+  }
+
+  .menuList{
+    display: none;
+  }
+  
+
+  .nav-holder-mobile{display: none;}
+}
+
+@media screen and (min-width:1441px) and (max-width:2600px){
+  .burger{
+    display: none;
+  }
+
+  .menuList{
+    display: none;
+  }
+  
+
+  .nav-holder-mobile{display: none;}
+}
+
+@media (min-width: 1920px) {
+
+  .logo{
+    height: 80px;
+    width: 80px;
+  }
+
+  .nav-link{
+    font-size: 26px;
+  }
+}

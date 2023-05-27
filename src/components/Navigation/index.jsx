@@ -1,13 +1,38 @@
-import styles from "./style.module.scss";
+import styles from "./style.module.css";
 import { clsx } from "clsx";
-import { useState } from "react";
-const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
+import { useContext, useEffect, useState } from "react";
+import { ScrollContext } from "../../pages/scrollContext";
+const Navigation = ({ isOpen, toggleOpen }) => {
+  const { heroRef, aboutRef, roadmapRef, projectsRef, contactRef } =
+    useContext(ScrollContext);
+    const [fontSize, setFontSize] = useState('18px');
+
+  const handleClickScroll = (ref) => {
+    toggleOpen();
+    ref.scrollIntoView({ behavior: "smooth" });
+ 
+  };
+
+  useEffect(() => {
+    const updateFontSize = () => {
+      const newFontSize = window.innerHeight > 400 ? '24px' : '18px';
+      setFontSize(newFontSize);
+    };
+
+    updateFontSize();
+
+    window.addEventListener('resize', updateFontSize);
+
+    return () => {
+      window.removeEventListener('resize', updateFontSize);
+    };
+  }, []);
+
   return (
     <>
       <div className={styles["nav-holder-mobile"]}>
         <div
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => toggleOpen()}
           className={clsx(
             styles.burger,
             isOpen && styles.clicked,
@@ -37,36 +62,89 @@ const Navigation = () => {
           ></div>
         </div>
         <div
+        style={{fontSize}}
           className={clsx(
             isOpen && [styles.visible, styles.menuList],
-            // styles.active,
             !isOpen && styles.unvisible
           )}
         >
-          <a href="/">About me</a>
-          <a href="/projects">Projects</a>
-          <a href="/NikolaCulic.pdf" download>
+          <a
+            onClick={() => {
+              handleClickScroll(heroRef);
+            }}
+          >
+            Info
+          </a>
+
+          <a
+            onClick={() => {
+              handleClickScroll(aboutRef);
+            }}
+          >
+            About me
+          </a>
+          <a
+            onClick={() => {
+              handleClickScroll(roadmapRef);
+            }}
+          >
+            Roadmap
+          </a>
+          <a
+            onClick={() => {
+              handleClickScroll(projectsRef);
+            }}
+          >
+            Projects
+          </a>
+          <a
+            onClick={() => {
+              handleClickScroll(contactRef);
+            }}
+          >
+            Contact
+          </a>
+          <a onClick={() => toggleOpen()} href="/NikolaCulic.pdf" download>
             Download CV
           </a>
         </div>
       </div>
       <div className={styles["nav-holder"]}>
-        <div className={styles["nav-links"]}>
-          <ul>
-            <li>
-              <a href="/">About me</a>
-            </li>
-            <li>
-              <a href="/projects">Projects</a>
-            </li>
-            <li>
-              <a href="./NikolaCulic.pdf" download={true}>
-                Download CV
-              </a>
-            </li>
-          </ul>
+        <div className={styles["logo-holder"]}>
+          <div
+            className={styles["logo"]}
+            onClick={() => handleClickScroll(heroRef)}
+          />
         </div>
-        
+        <div className={styles["nav-links"]}>
+          <a
+            className={styles["nav-link"]}
+            onClick={() => handleClickScroll(aboutRef)}
+          >
+            About me
+          </a>
+          <a
+            className={styles["nav-link"]}
+            onClick={() => handleClickScroll(roadmapRef)}
+          >
+            My roadmap
+          </a>
+          <a
+            className={styles["nav-link"]}
+            onClick={() => handleClickScroll(projectsRef)}
+          >
+            Projects
+          </a>
+          <a
+            className={styles["nav-link"]}
+            onClick={() => handleClickScroll(contactRef)}
+          >
+            Contact
+          </a>
+          <a className={styles["nav-link"]} href="/NikolaCulic.pdf" download>
+            Download CV
+          </a>
+        </div>
       </div>
     </>
   );

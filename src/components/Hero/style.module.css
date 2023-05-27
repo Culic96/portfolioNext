@@ -1,0 +1,173 @@
+.hero-wrapper {
+    height: 90vh;
+    margin-top: 10vh;
+    max-width: 1920px;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+    url("/heroBackground.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Nunito", sans-serif;
+    border-bottom: 2px groove #fff;
+    user-select: none;
+}
+
+.content-wrapper{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    height: 500px;
+}
+
+.hero-text {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    animation: fade 1s ease;
+    transition: all 1s ease;
+}
+
+@keyframes fade {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+.hero-text h1 {
+    color: #e67e00;
+    font-weight: 600;
+    font-size: 32px;
+}
+
+.hero-text h3 {
+    font-weight: 300;
+    width: 80%;
+    font-size: 24px;
+}
+
+.hero-text a{
+    text-decoration: none;
+    color: '#fff';
+    font-size: 44px;
+    transition: color 0.3s ease;
+
+}
+
+.hero-text a:visited {
+    text-decoration: none;
+    color: '#fff';
+    font-size: 44px;
+}
+
+
+
+.icon{
+    padding: 15px;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.icon:hover {
+    color: #e67e00;
+    transition: color 0.3s ease;
+
+}
+
+
+.hero-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hero-image-wrapper {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fade 1s ease;
+}
+
+.hero-image {
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+    background-size: cover;
+    box-shadow: #e67e00 0px 5px 12px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)), url('/me.jpeg');
+}
+
+@media screen and (min-width: 340px) and (max-width: 767px) {
+    .hero-image {
+        width: 170px;
+        height: 170px;
+    }
+
+    .hero-text {
+        gap: 5px;
+    }
+    .hero-text h1 {
+        font-size: 22px;
+    }
+
+    .hero-text h3 {
+        font-size: 16px;
+    }
+
+    .icon {
+        font-size: 26px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .hero-image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .hero-text {
+        gap: 0.5rem;
+    }
+
+    .hero-text h1 {
+        font-size: 28px;
+    }
+
+    .hero-text h3 {
+        font-size: 18px;
+    }
+
+    .icon {
+        font-size: 32px;
+    }
+}
+@media (min-width: 1920px) {
+    .content-wrapper{
+        width: 1600px;
+    }
+
+    .hero-image{
+        height: 500px;
+        width: 500px;
+    }
+
+    .hero-text h1 {
+        font-size: 50px;
+    }
+
+    .hero-text h3 {
+        font-size: 40px;
+    }
+}
+
+
+

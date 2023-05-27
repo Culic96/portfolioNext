@@ -1,0 +1,273 @@
+.roadmap-wrapper {
+  max-width: 1920px;
+  height: 100%;
+  background: linear-gradient(rgba(55, 55, 55, 0.1), rgba(55, 55, 55, 0.3));
+  border-bottom: 2px groove #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.roadmap-heading {
+  color: white;
+  text-align: "left";
+  padding-top: 40px;
+  padding-left: 200px;
+  font-size: 50px;
+  user-select: none;
+
+}
+
+.roadmap-subheading {
+  color: white;
+  text-align: "left";
+  margin: 40px auto;
+  font-size: 24px;
+  font-weight: 300;
+  margin-left: 200px;
+  user-select: none;
+
+}
+
+/* .divider {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* .roadmap-technologies {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+
+
+
+.technology:nth-child(2) {
+  background-image: url('/css.png');
+}
+
+.technology:nth-child(3) {
+  background-image: url('/js.png');
+}
+
+.technology:nth-child(4) {
+  background-image: url('/react.png');
+}
+
+.technology:nth-child(5) {
+  background-image: url('/js.png');
+}
+
+.technology:nth-child(6) {
+  background-image: url('/firebase-logo.png');
+}
+
+
+
+
+.roadmap-desc-holder {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+}
+
+.roadmap-desc {
+  color: white;
+  width: 400px;
+  height: 200px;
+  animation: slide-left 0.3s ease;
+}
+
+.roadmap-desc p {
+  color: white;
+  font-size: 24px;
+  font-weight: 300;
+  font-family: "Lato", sans-serif;
+} */
+
+@keyframes slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px groove #fff;
+  font-family: "Nunito", sans-serif;
+  user-select: none;
+
+}
+
+.steps {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.step {
+  display: flex;
+  width: 600px;
+  height: 300px;
+  position: relative;
+}
+
+/* .step::after {
+  content: "";
+  position: absolute;
+  left: 100px;
+  top: 200px;
+  height: 50px;
+  width: 4px;
+  z-index: 1;
+  background-color: #e67e00;
+} */
+
+.info {
+  margin: 8px 20px;
+  margin-left: 50px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: #e67e00;
+}
+
+.text {
+  font-size: 20px;
+  color: white;
+  font-weight: 300;
+}
+
+.number {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  border: 2px solid #e67e00;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 65%;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  margin-right: 12px;
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+.number:nth-of-type(2) {
+  background-size: 80%;
+}
+
+@media screen and (min-width: 340px) and (max-width: 767px) {
+  .roadmap-heading{
+    padding-left: 20px;
+    font-size: 24px;
+  }
+
+  .roadmap-subheading{
+    font-size: 18px;
+    margin:0;
+    padding: 20px 0px 50px 20px;
+  }
+
+  .step{
+    height: 170px;
+    width: 340px;
+    margin-bottom: 25px;
+  }
+
+  .info{
+    margin-left: 10px;
+    margin: 0 5px;
+  }
+
+  .number{
+    width: 130px;
+    height: 130px;
+  }
+
+  .title{
+    font-size: 18px;
+  }
+
+  .text{
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width:1024px){
+  .roadmap-heading {
+    padding-left: 50px;
+  font-size: 32px;
+  }
+
+  .roadmap-subheading{
+    font-size: 28px;
+    margin:0;
+    padding: 20px 0px 20px 50px;
+  }
+
+  .step{
+    height: 250px;
+    margin-bottom: 10px;
+  }
+
+  .title{
+    font-size: 22px;
+  }
+
+  .text{
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .step {
+    width: 1050px;
+    height: auto;
+    margin-bottom: 40px;
+  }
+  .number {
+    height: 350px;
+    width: 350px;
+  }
+
+  .info {
+    height: 400px;
+    margin: 0 100px;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  .text {
+    font-size: 28px;
+  }
+}
